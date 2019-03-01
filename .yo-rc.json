@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Elyse Holladay",
+      "authorEmail": "elyseholladay@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
