@@ -1,38 +1,43 @@
-'use strict';
-const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
+/* eslint-disable capitalized-comments */
+/* eslint-disable lines-between-class-members */
+var Generator = require("yeoman-generator");
+var chalk = require("chalk");
 
 module.exports = class extends Generator {
-  prompting() {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(`Welcome to the bedazzling ${chalk.red('generator-standard-docs-templates')} generator!`)
-    );
+  constructor(args, opts) {
+    super(args, opts);
+    this.log("Initializing...");
+  }
 
-    const prompts = [
+  async prompting() {
+    this.answers = await this.prompt([
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: "input",
+        name: "name",
+        message: "Your project name",
+        default: this.appname // Default to current folder name
+      },
+      {
+        type: "confirm",
+        name: "cool",
+        message: "Would you like to enable the Cool feature?"
       }
-    ];
-
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
+    ]);
   }
 
+  // configuring - save configs and create files like .editorconfig //#endregion
+  // writing
   writing() {
-    this.fs.copy(
+    this.log("Creating documentation in the project...", this.contextRoot);
+    this.log("Writing documentation from templates ", this.sourceRoot());
+
+    // copy a template file
+    this.fs.copyTpl(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.destinationPath('foo/test.txt'),
+      { title: this.answers.name }
     );
   }
-
-  install() {
-    this.installDependencies();
-  }
+  // install, if anything
+  // end
 };
