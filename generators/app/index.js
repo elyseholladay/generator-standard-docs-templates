@@ -10,34 +10,33 @@ module.exports = class extends Generator {
   }
 
   async prompting() {
-    this.answers = await this.prompt([
+    this.userAnswers = await this.prompt([
       {
         type: "input",
-        name: "name",
-        message: "Your project name",
-        default: this.appname // Default to current folder name
+        name: "repoName",
+        message: "What is your project's name?",
+        default: this.appname // Defaults to current folder name
+        // TODO: can we check to see if this matches the repo name, and fail if it doesn't? Do we _want_ to do that?
       },
       {
-        type: "confirm",
-        name: "cool",
-        message: "Would you like to enable the Cool feature?"
+        type: "input",
+        name: "shortDescription",
+        message: "What is a short, one-sentence description of this package?",
+        validate: x => x.length > 0 ? true : "Providing a short description is required. Don't worry, you can always edit it later."
       }
     ]);
   }
 
   // configuring - save configs and create files like .editorconfig //#endregion
-  // writing
-  writing() {
-    this.log("Creating documentation in the project...", this.contextRoot);
-    this.log("Writing documentation from templates ", this.sourceRoot());
 
-    // copy a template file
+  writing() {
     this.fs.copyTpl(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('foo/test.txt'),
-      { title: this.answers.name }
+      this.templatePath('README.md'),
+      this.destinationPath('README.md'),
+      this.userAnswers
     );
   }
+
   // install, if anything
   // end
 };
