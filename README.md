@@ -1,36 +1,62 @@
-# generator-standard-docs-templates [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-standard-docs-templates
+
 > A generator that creates standard templates for common repository documentation.
 
-## Installation
+To make it easy for engineers on your team to do the right thing and write great documentation, this package generates standard documentation templates. Using a Yeoman generator CLI, you can answer questions to get a pre-filled README and other documentation.
 
-First, install [Yeoman](http://yeoman.io) and generator-standard-docs-templates using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+*   **README** — As the entry point to the tool, a good README should explain what the tool is, how to use and install it, and how to get in touch with maintainers. A standard README template makes it easy for consumers to find the information they need.
+*   **CONTRIBUTING** — Contributing information helps turn consumers into collaborators, by describing how to install, contribute, code review, and participate in the tool's development.
+*   **CHANGELOG** — A changelog, both automatically generated and human-augmented, helps consumers understand the changes between versions. A changelog is a crucial part of understanding how to upgrade.
+*   **CODE_OF_CONDUCT** — Based on the [Contributor Covenant](https://www.contributor-covenant.org/), a code of conduct governs how we interact with contributors to our projects.
+*   **LICENSE** — Optional, but useful if you want your project to be shared and used. A license is required for many organizations to use OS projects.
+
+## Table of Contents
+
+*   [Install](#install)
+*   [Usage](#usage)
+*   [Releases](#releases)
+*   [Maintainers](#maintainers)
+*   [Contributing](#contributing)
+*   [License](#license)
+
+## Install
+First install [Yeoman](https://yeoman.io), and this package, with npm:
 
 ```bash
 npm install -g yo
 npm install -g generator-standard-docs-templates
 ```
 
-Then generate your new project:
+Then to run the generator:
 
 ```bash
 yo standard-docs-templates
 ```
 
-## Getting To Know Yeoman
+### Prerequisites
+Requires [Node](https://nodejs.org), [npm](https://www.npmjs.com), and [Yeoman](https://yeoman.io).
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+## Usage
+_TBD_
+
+### CLI
+_TBD_
+
+## Releases
+This project follows [Semantic Versioning](https://semver.org/). Release versions can be found on the [Releases page](https://github.com/elyseholladay/generator-standard-docs-templates/releases).
+
+## Maintainers
+* [Elyse Holladay](https://github.com/elyseholladay)
+
+## Contributing
+Contributions and PRs are accepted on this project.
+
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute.
+
+`this-project` is governed by the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+
+### Local Development
+_TBD_
 
 ## License
-
-MIT © [Elyse Holladay]()
-
-
-[npm-image]: https://badge.fury.io/js/generator-standard-docs-templates.svg
-[npm-url]: https://npmjs.org/package/generator-standard-docs-templates
-[travis-image]: https://travis-ci.org/elyseholladay/generator-standard-docs-templates.svg?branch=master
-[travis-url]: https://travis-ci.org/elyseholladay/generator-standard-docs-templates
-[daviddm-image]: https://david-dm.org/elyseholladay/generator-standard-docs-templates.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elyseholladay/generator-standard-docs-templates
+`this-project` is licensed under the [MIT License](LICENSE).
