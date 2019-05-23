@@ -72,7 +72,8 @@
   },
   "scripts": {
     "pretest": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "update-readme-toc": "npx markdown-toc README.md --maxdepth=2 -i --bullets '* '"
   },
   "repository": "elyseholladay/generator-standard-docs-templates",
   "license": "MIT"
